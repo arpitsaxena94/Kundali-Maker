@@ -3,13 +3,15 @@ from flask import Flask, request, jsonify, render_template_string
 import requests
 import base64
 import json
+import os
+HUGGING_FACE_TOKEN = os.environ.get("HUGGING_FACE_TOKEN")
 
 # ==== SETUP ====
 app = Flask(__name__)
 
 # Hugging Face API Configuration
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-HUGGING_FACE_TOKEN = "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"
+# HUGGING_FACE_TOKEN = "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"
 
 # ==== HTML UI ====
 html_template = """
